@@ -13,7 +13,7 @@
 #   em		emulation; identifies the config/te-* files
 
 # Optional output shell variables; these are not always set:
-#   arch	the default architecture; sets DEFAULT_ARCH on some systems 
+#   arch	the default architecture; sets DEFAULT_ARCH on some systems
 #   endian	"big" or "little"; used on bi-endian systems
 
 cpu_type=
@@ -42,8 +42,8 @@ case ${cpu} in
   hppa*)		cpu_type=hppa ;;
   i[3-7]86)		cpu_type=i386 arch=i386;;
   ia64)			cpu_type=ia64 ;;
-  ip2k)			cpu_type=ip2k endian=big ;; 
-  iq2000)		cpu_type=iq2000 endian=big ;; 
+  ip2k)			cpu_type=ip2k endian=big ;;
+  iq2000)		cpu_type=iq2000 endian=big ;;
   lm32)			cpu_type=lm32 ;;
   m32c)			cpu_type=m32c endian=little ;;
   m32r)			cpu_type=m32r endian=big ;;
@@ -118,7 +118,7 @@ case ${generic_target} in
   arm-*-nto*)				fmt=elf ;;
   arm-epoc-pe)				fmt=coff em=epoc-pe ;;
   arm-wince-pe | arm-*-wince | arm*-*-mingw32ce* | arm*-*-cegcc*)
-					fmt=coff em=wince-pe ;;
+                                        fmt=coff em=wince-pe ;;
   arm-*-pe)				fmt=coff em=pe ;;
   arm-*-riscix*)			fmt=aout em=riscix ;;
 
@@ -132,7 +132,7 @@ case ${generic_target} in
   cr16-*-elf*)				fmt=elf ;;
 
   cris-*-linux-* | crisv32-*-linux-*)
-					fmt=multi em=linux ;;
+                                        fmt=multi em=linux ;;
   cris-*-* | crisv32-*-*)		fmt=multi ;;
 
   crx-*-elf*)				fmt=elf ;;
@@ -228,6 +228,7 @@ case ${generic_target} in
   i386-*-chaos)				fmt=elf ;;
   i386-*-rdos*)				fmt=elf ;;
   i386-*-darwin*)			fmt=macho ;;
+  i386-*-ebbrt*)                        fmt=elf ;;
 
   i860-*-*)				fmt=elf endian=little ;;
 
@@ -286,7 +287,7 @@ case ${generic_target} in
   mips-*-riscos*)			fmt=ecoff ;;
   mips*-*-linux*)			fmt=elf em=tmips ;;
   mips*-*-freebsd* | mips*-*-kfreebsd*-gnu)
-					fmt=elf em=freebsd ;;
+                                        fmt=elf em=freebsd ;;
   mips-*-sysv4*MP* | mips-*-gnu*)	fmt=elf em=tmips ;;
   mips*-sde-elf*)			fmt=elf em=tmips ;;
   mips-*-sysv*)				fmt=ecoff ;;

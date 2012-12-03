@@ -190,6 +190,7 @@ i[3-7]86-*-linux-*)	targ_emul=elf_i386
 			targ64_extra_libpath=elf_x86_64
 			targ_extra_libpath=elf32_x86_64
 			tdir_i386linux=${targ_alias}aout ;;
+x86_64-*-ebbrt*)        targ_emul=ebbrt_x86_64 ;;
 x86_64-*-linux-*)	targ_emul=elf_x86_64
 			targ_extra_emuls="elf32_x86_64 elf_i386 i386linux elf_l1om elf_k1om"
 			targ_extra_libpath="elf_i386 elf32_x86_64 elf_l1om elf_k1om"

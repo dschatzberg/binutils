@@ -349,18 +349,18 @@ tooldir = $(exec_prefix)/$(target_alias)
 
 # Automake 1.10+ disables lex and yacc output file regeneration if
 # maintainer mode is disabled.  Avoid this.
-am__skiplex = 
-am__skipyacc = 
+am__skiplex =
+am__skipyacc =
 AM_CFLAGS = $(WARN_CFLAGS)
-@ENABLE_PLUGINS_FALSE@PLUGIN_C = 
+@ENABLE_PLUGINS_FALSE@PLUGIN_C =
 
 # Conditionally enable the plugin interface.
 @ENABLE_PLUGINS_TRUE@PLUGIN_C = plugin.c
-@ENABLE_PLUGINS_FALSE@PLUGIN_H = 
+@ENABLE_PLUGINS_FALSE@PLUGIN_H =
 @ENABLE_PLUGINS_TRUE@PLUGIN_H = plugin.h
-@ENABLE_PLUGINS_FALSE@PLUGIN_OBJECT = 
+@ENABLE_PLUGINS_FALSE@PLUGIN_OBJECT =
 @ENABLE_PLUGINS_TRUE@PLUGIN_OBJECT = plugin.@OBJEXT@
-@ENABLE_PLUGINS_FALSE@PLUGIN_CFLAGS = 
+@ENABLE_PLUGINS_FALSE@PLUGIN_CFLAGS =
 @ENABLE_PLUGINS_TRUE@PLUGIN_CFLAGS = -DENABLE_PLUGINS
 
 # We put the scripts in the directory $(scriptdir)/ldscripts.
@@ -385,7 +385,7 @@ HOSTING_EMU = -m $(EMUL)
 # Setup the testing framework, if you have one
 EXPECT = expect
 RUNTEST = runtest
-RUNTESTFLAGS = 
+RUNTESTFLAGS =
 CC_FOR_TARGET = ` \
   if [ -f $$r/../gcc/xgcc ] ; then \
     if [ -f $$r/../newlib/Makefile ] ; then \
@@ -881,7 +881,7 @@ ld_new_LDADD = $(EMULATION_OFILES) $(EMUL_EXTRA_OFILES) $(BFDLIB) $(LIBIBERTY) $
 
 # END OF CHECK TARGETS
 
-# 
+#
 # Build a dummy plugin using libtool.
 #
 @ENABLE_PLUGINS_TRUE@noinst_LTLIBRARIES = libldtestplug.la
@@ -955,7 +955,7 @@ config.h: stamp-h1
 stamp-h1: $(srcdir)/config.in $(top_builddir)/config.status
 	@rm -f stamp-h1
 	cd $(top_builddir) && $(SHELL) ./config.status config.h
-$(srcdir)/config.in: @MAINTAINER_MODE_TRUE@ $(am__configure_deps) 
+$(srcdir)/config.in: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
 	rm -f stamp-h1
 	touch $@
@@ -973,7 +973,7 @@ clean-noinstLTLIBRARIES:
 	  echo "rm -f \"$${dir}/so_locations\""; \
 	  rm -f "$${dir}/so_locations"; \
 	done
-libldtestplug.la: $(libldtestplug_la_OBJECTS) $(libldtestplug_la_DEPENDENCIES) 
+libldtestplug.la: $(libldtestplug_la_OBJECTS) $(libldtestplug_la_DEPENDENCIES)
 	$(libldtestplug_la_LINK) $(am_libldtestplug_la_rpath) $(libldtestplug_la_OBJECTS) $(libldtestplug_la_LIBADD) $(LIBS)
 install-binPROGRAMS: $(bin_PROGRAMS)
 	@$(NORMAL_INSTALL)
@@ -1028,7 +1028,7 @@ deffilep.h: deffilep.c
 	  rm -f deffilep.c; \
 	  $(MAKE) $(AM_MAKEFLAGS) deffilep.c; \
 	else :; fi
-ld-new$(EXEEXT): $(ld_new_OBJECTS) $(ld_new_DEPENDENCIES) 
+ld-new$(EXEEXT): $(ld_new_OBJECTS) $(ld_new_DEPENDENCIES)
 	@rm -f ld-new$(EXEEXT)
 	$(LINK) $(ld_new_OBJECTS) $(ld_new_LDADD) $(LIBS)
 
@@ -1474,17 +1474,17 @@ ld.info: ld.texinfo $(ld_TEXINFOS)
 	fi; \
 	rm -rf $$backupdir; exit $$rc
 
-ld.dvi: ld.texinfo $(ld_TEXINFOS) 
+ld.dvi: ld.texinfo $(ld_TEXINFOS)
 	TEXINPUTS="$(am__TEXINFO_TEX_DIR)$(PATH_SEPARATOR)$$TEXINPUTS" \
 	MAKEINFO='$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) -I $(srcdir)' \
 	$(TEXI2DVI) -o $@ `test -f 'ld.texinfo' || echo '$(srcdir)/'`ld.texinfo
 
-ld.pdf: ld.texinfo $(ld_TEXINFOS) 
+ld.pdf: ld.texinfo $(ld_TEXINFOS)
 	TEXINPUTS="$(am__TEXINFO_TEX_DIR)$(PATH_SEPARATOR)$$TEXINPUTS" \
 	MAKEINFO='$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) -I $(srcdir)' \
 	$(TEXI2PDF) -o $@ `test -f 'ld.texinfo' || echo '$(srcdir)/'`ld.texinfo
 
-ld.html: ld.texinfo $(ld_TEXINFOS) 
+ld.html: ld.texinfo $(ld_TEXINFOS)
 	rm -rf $(@:.html=.htp)
 	if $(MAKEINFOHTML) $(AM_MAKEINFOHTMLFLAGS) $(MAKEINFOFLAGS) -I $(srcdir) \
 	 -o $(@:.html=.htp) `test -f 'ld.texinfo' || echo '$(srcdir)/'`ld.texinfo; \
@@ -1918,7 +1918,7 @@ install-info-am: $(INFO_DEPS)
 	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
 	  file_i=`echo "$$file" | sed 's|\.info$$||;s|$$|.i|'`; \
 	  for ifile in $$d/$$file $$d/$$file-[0-9] $$d/$$file-[0-9][0-9] \
-	               $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \
+		       $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \
 	    if test -f $$ifile; then \
 	      echo "$$ifile"; \
 	    else : ; fi; \
@@ -2475,8 +2475,8 @@ eelf32lm32.c: $(srcdir)/emulparams/elf32lm32.sh \
 	${GENSCRIPTS} elf32lm32 "$(tdir_elf32lm32)"
 eelf32lm32fd.c: $(srcdir)/emulparams/elf32lm32fd.sh \
   $(srcdir)/emulparams/elf32lm32.sh $(ELF_DEPS) \
-  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS} 
-	${GENSCRIPTS} elf32lm32fd "$(tdir_elf32lm32fd)" 
+  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+	${GENSCRIPTS} elf32lm32fd "$(tdir_elf32lm32fd)"
 eelf32lmip.c: $(srcdir)/emulparams/elf32lmip.sh \
   $(srcdir)/emulparams/elf32bmip.sh $(ELF_DEPS) \
   $(srcdir)/emultempl/mipself.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
@@ -3167,11 +3167,11 @@ eriscix.c: $(srcdir)/emulparams/riscix.sh \
 	${GENSCRIPTS} riscix "$(tdir_riscix)"
 escore3_elf.c: $(srcdir)/emulparams/scoreelf.sh \
   $(ELF_DEPS) $(srcdir)/emultempl/scoreelf.em \
-  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS} 
-	${GENSCRIPTS} score3_elf "$(tdir_score3_elf)" scoreelf 
+  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+	${GENSCRIPTS} score3_elf "$(tdir_score3_elf)" scoreelf
 escore7_elf.c: $(srcdir)/emulparams/scoreelf.sh \
   $(ELF_DEPS) $(srcdir)/emultempl/scoreelf.em \
-  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS} 
+  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
 	${GENSCRIPTS} score7_elf "$(tdir_score7_elf)" scoreelf
 esh.c: $(srcdir)/emulparams/sh.sh \
   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/sh.sc ${GEN_DEPENDS}
@@ -3443,6 +3443,9 @@ eelf_k1om_fbsd.c: $(srcdir)/emulparams/elf_k1om_fbsd.sh \
   $(srcdir)/emulparams/elf_k1om.sh \
   $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
 	${GENSCRIPTS} elf_k1om_fbsd "$(tdir_elf_k1om_fbsd)"
+eebbrt_x86_64.c: $(srcdir)/emulparams/ebbrt_x86_64.sh \
+  $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+  ${GENSCRIPTS} ebbrt_x86_64 "$(tdir_ebbrt_x86_64)"
 eelf_x86_64.c: $(srcdir)/emulparams/elf_x86_64.sh \
   $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
 	${GENSCRIPTS} elf_x86_64 "$(tdir_elf_x86_64)"
@@ -3537,9 +3540,9 @@ ld.1: $(srcdir)/ld.texinfo configdoc.texi
 	touch $@
 	-$(TEXI2POD) $(MANCONF) < $(srcdir)/ld.texinfo > ld.pod
 	-($(POD2MAN) ld.pod | \
-	        sed -e '/^.if n .na/d' > $@.T$$$$ && \
-	        mv -f $@.T$$$$ $@) || \
-	        (rm -f $@.T$$$$ && exit 1)
+		sed -e '/^.if n .na/d' > $@.T$$$$ && \
+		mv -f $@.T$$$$ $@) || \
+		(rm -f $@.T$$$$ && exit 1)
 	rm -f ld.pod
 mostlyclean-local:
 	-rm -rf tmpdir
