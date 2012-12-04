@@ -3445,7 +3445,7 @@ eelf_k1om_fbsd.c: $(srcdir)/emulparams/elf_k1om_fbsd.sh \
 	${GENSCRIPTS} elf_k1om_fbsd "$(tdir_elf_k1om_fbsd)"
 eebbrt_x86_64.c: $(srcdir)/emulparams/ebbrt_x86_64.sh \
   $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
-  ${GENSCRIPTS} ebbrt_x86_64 "$(tdir_ebbrt_x86_64)"
+	${GENSCRIPTS} ebbrt_x86_64 "$(tdir_ebbrt_x86_64)"
 eelf_x86_64.c: $(srcdir)/emulparams/elf_x86_64.sh \
   $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
 	${GENSCRIPTS} elf_x86_64 "$(tdir_elf_x86_64)"
