@@ -458,6 +458,7 @@ powerpc-*-freebsd* | powerpc-*-kfreebsd*-gnu)
 			targ_extra_emuls="elf32ppc elf32ppcsim";
 			targ_extra_libpath=elf32ppc;
 			tdir_elf32ppcsim=`echo ${targ_alias} | sed -e 's/ppc/ppcsim/'` ;;
+powerpc64-*-ebbrt*)        targ_emul=ebbrt64ppc ;;
 powerpc*-*-linux*)	case "${targ}" in
 			*64*)	targ_emul=elf64ppc
 				targ_extra_emuls="elf32ppclinux elf32ppc elf32ppcsim"

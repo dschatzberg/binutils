@@ -330,6 +330,7 @@ case ${generic_target} in
   ppc-*-beos*)				fmt=coff ;;
   ppc-*-*n*bsd* | ppc-*-elf*)		fmt=elf ;;
   ppc-*-eabi* | ppc-*-sysv4*)		fmt=elf ;;
+  ppc-*-ebbrt*)                         fmt=elf ;;
   ppc-*-linux-*)			fmt=elf em=linux ;;
   ppc-*-solaris*)			fmt=elf em=solaris ;;
   ppc-*-rtems*)				fmt=elf ;;

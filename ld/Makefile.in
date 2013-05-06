@@ -3421,6 +3421,10 @@ eelf64mmix.c: $(srcdir)/emulparams/elf64mmix.sh \
   $(ELF_DEPS) $(srcdir)/emultempl/mmix-elfnmmo.em \
   $(srcdir)/emultempl/mmixelf.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
 	${GENSCRIPTS} elf64mmix "$(tdir_elf64mmix)"
+eebbrt64ppc.c: $(srcdir)/emulparams/ebbrt64ppc.sh $(srcdir)/emultempl/ppc64elf.em \
+  ldemul-list.h \
+  $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+	${GENSCRIPTS} ebbrt64ppc "$(tdir_ebbrt64ppc)"
 eelf64ppc.c: $(srcdir)/emulparams/elf64ppc.sh $(srcdir)/emultempl/ppc64elf.em \
   ldemul-list.h \
   $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
